@@ -1,0 +1,92 @@
+services:
+
+  security-db:
+    image: postgres:17
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=security_db
+    volumes:
+      - security_db_data:/var/lib/postgresql/data
+    networks:
+      - internal_network
+
+  security-service:
+    build:
+      context: ./security-service
+    ports:
+      - "8080:8080"
+    environment:
+      - SECURITY_DB_URL=jdbc:postgresql://security-db:5432/security_db
+      - DB_USERNAME=${POSTGRES_USER}
+      - DB_PASSWORD=${POSTGRES_PASSWORD}
+      - MUSIC_SERVICE_URL=http://music-service:8081/api
+      - GAME_SERVICE_URL=http://game-service:8082/api
+    depends_on:
+      - security-db
+    networks:
+      - internal_network
+
+  music-db:
+    image: postgres:17
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=music_db
+    volumes:
+      - music_db_data:/var/lib/postgresql/data
+    networks:
+      - internal_network
+
+  music-service:
+    build:
+      context: ./music-service
+    volumes:
+      - ${YOUTUBE_SAVE_PATH}:${YOUTUBE_SAVE_PATH}
+      - ${SPOTIFY_SAVE_PATH}:${SPOTIFY_SAVE_PATH}
+    environment:
+      - MUSIC_DB_URL=jdbc:postgresql://music-db:5432/music_db
+      - DB_USERNAME=${POSTGRES_USER}
+      - DB_PASSWORD=${POSTGRES_PASSWORD}
+      - YOUTUBE_API_KEY=${YOUTUBE_API_KEY}
+      - YOUTUBE_SAVE_PATH=${YOUTUBE_SAVE_PATH}
+      - SPOTIFY_CLIENT_ID=${SPOTIFY_CLIENT_ID}
+      - SPOTIFY_CLIENT_SECRET=${SPOTIFY_CLIENT_SECRET}
+      - SPOTIFY_SAVE_PATH=${SPOTIFY_SAVE_PATH}
+      - SPOTIFY_TEMP_SAVE_PATH=${SPOTIFY_TEMP_SAVE_PATH}
+    depends_on:
+      - music-db
+    networks:
+      - internal_network
+
+  game-db:
+    image: postgres:17
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=game_db
+    volumes:
+      - game_db_data:/var/lib/postgresql/data
+    networks:
+      - internal_network
+
+  game-service:
+    build:
+      context: ./game-service
+    environment:
+      - GAME_DB_URL=jdbc:postgresql://game-db:5432/game_db
+      - DB_USERNAME=${POSTGRES_USER}
+      - DB_PASSWORD=${POSTGRES_PASSWORD}
+    depends_on:
+      - game-db
+    networks:
+      - internal_network
+
+volumes:
+  security_db_data:
+  music_db_data:
+  game_db_data:
+
+networks:
+  internal_network:
+    driver: bridge

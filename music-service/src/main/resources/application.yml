@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: music-service
+  datasource:
+    url: ${MUSIC_DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+  jackson:
+    generator:
+      ESCAPE_NON_ASCII: true
+
+youtube:
+  save-path: ${YOUTUBE_SAVE_PATH}
+  api-key: ${YOUTUBE_API_KEY}
+  max_playlist_search: 50
+
+spotify:
+  client-id: ${SPOTIFY_CLIENT_ID}
+  client-secret: ${SPOTIFY_CLIENT_SECRET}
+  save-path: ${SPOTIFY_SAVE_PATH}
+  temp-save-path: ${SPOTIFY_TEMP_SAVE_PATH}
+  credentials-timeout: 20
+
+song:
+  max-download-threads: 10
+  max-download-time-seconds: 600
+  default-platform: YOUTUBE
+
+server:
+  port: 8081
+  

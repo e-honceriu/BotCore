@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: game-service
+  datasource:
+    url: ${GAME_DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+lol:
+  maxBans: 5
+  maxPlayers: 10
+  championPoolSize: 15
+  eloGain: 20
+  eloDifficultyFactor: 20
+  eloPerformanceFactor: 20
+  maxEloGain: 50
+  eloDifficultyKFactor: 200
+  startingElo: 400
+
+server:
+  port: 8082
+
