@@ -15,3 +15,4 @@ The framework integrates multiple services to extend the capabilities of Discord
 
 You can find an integration of this backend in a Discord bot written in Python here: [BotX](https://github.com/e-honceriu/BotX).
 
+** Instalation Guide
