@@ -1,6 +1,24 @@
 # BotCore
 
 # Table of Contents
+1. [Introduction](#introduction)
+2. [Installation Guide](#installation-guide)
+    - [Prerequisites](#prerequisites)
+    - [Clone the Repository](#1-clone-the-repository)
+    - [Configure Environment Variables](#2-configure-the-environment-variables)
+    - [Build and Run the Bot](#3-build-and-run-botcore)
+    - [Stop the Bot](#4-stop-botcore)
+    - [Updating the Bot](#5-updating-botcore)
+3. [Features](#features)
+    - [Security Features](#security-features)
+    - [Music Features](#music-features)
+    - [Game Features](#game-features)
+4. [Endpoints](#endoints)
+    - [Security Endpoints](#security-endpoints)
+    - [Music Endpoints](#music-endpoints)
+    - [League of Legends integration endpoints](#league-of-legends-integration-endpoints)
+5. [License](#license)
+6. [Contributing](#contributing)
 
 # Introduction
 
@@ -195,7 +213,7 @@ Follow the steps below to setup and run the project using Docker.
     docker compose up --build
     ```
 
-## 5. Stop **BotCore**
+## 4. Stop **BotCore**
 
 - You can stop all containers, by running in root directory of the project:
 
@@ -203,7 +221,7 @@ Follow the steps below to setup and run the project using Docker.
     docker compose down
     ```
 
-## 6. Updating **BotCore**
+## 5. Updating **BotCore**
 
 To update BotCore with the latest changes from the repository:
 
@@ -2358,8 +2376,46 @@ The system supports the following match statuses:
     - `400 Bad Request` → If any required parameter is missing or invalid.
     - `404 Not Found` → If the player, match, or bot is not found.
 
-# Configuration
+---
 
-In this section, we will cover how to configure the various parts of BotCore and its services for smooth integration.
+## **License**
 
-## Music Service Configuration
+This project is licensed under the terms of the **GNU General Public License (GPL) v3.0**. 
+
+- **Copyright (C) 2025 Emilian-Andrei Honceriu**
+- This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+- This program is distributed in the hope that it will be useful, but **without any warranty**, without even the implied warranty of merchantability or fitness for a particular purpose. See the [GNU General Public License](https://www.gnu.org/licenses/) for more details.
+
+You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+---
+
+## **Contributing**
+
+Contributions to this project are welkome! To contribute, follow these steps:
+
+### 1. Fork the Repository
+- Click the "Fork" button at the top of the repository to create your own copy of the project.
+
+### 2. Create a New Branch
+- Create a new branch from `main` to work on your changes. It's good practice to name your branch descriptively (e.g., `fix-typos`, `add-new-feature`).
+
+### 3. Make Your Changes
+- Make your desired changes to the project. Ensure that you follow the project’s coding conventions and guidelines.
+
+### 4. Commit Your Changes
+- Write clear, concise commit messages to explain the changes you've made.
+
+### 5. Push to Your Fork
+- Push your changes to the branch you created in your forked repository.
+
+### 6. Create a Pull Request
+- Open a pull request (PR) from your fork to the main repository. Describe the changes you've made and why they should be merged.
+
+### 7. Review Process
+- After submitting your PR, it will be reviewed. If there are any suggestions or modifications required, the repository maintainers will provide feedback.
+
+### Reporting Issues
+If you encounter bugs or have suggestions for improvements, feel free to open an issue in the repository.
+
+Thank you for your contributions!
