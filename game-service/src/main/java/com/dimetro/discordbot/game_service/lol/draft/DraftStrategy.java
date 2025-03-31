@@ -5,8 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.dimetro.discordbot.game_service.lol.entity.champion.Champion;
-import com.dimetro.discordbot.game_service.lol.entity.champion.ChampionRole;
+import com.dimetro.discordbot.game_service.lol.entity.champion.*;
 import com.dimetro.discordbot.game_service.lol.entity.match.Match;
 import com.dimetro.discordbot.game_service.lol.entity.team.Team;
 import com.dimetro.discordbot.game_service.lol.service.champion.ChampionService;

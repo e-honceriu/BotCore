@@ -13,4 +13,5 @@ public class MatchDoesNotBelongToBotException extends MatchServiceException {
             String.format("Match (ID=%s), attempted to be managed by a bot it does not belong to.", match.getId())
         );
     }
+    
 }

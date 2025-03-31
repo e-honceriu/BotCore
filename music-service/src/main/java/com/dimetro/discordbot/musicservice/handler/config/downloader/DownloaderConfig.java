@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Value;
 public class DownloaderConfig {
     
     private final String savePath;
+    
     @Value("${song.max-download-time-seconds}")
     private int maxDownloadTimeSeconds;
-    
 
     public DownloaderConfig(String savePath) {
         this.savePath = savePath;

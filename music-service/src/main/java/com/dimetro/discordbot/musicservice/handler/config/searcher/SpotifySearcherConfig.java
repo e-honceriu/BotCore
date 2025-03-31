@@ -12,9 +12,11 @@ public class SpotifySearcherConfig extends SearcherConfig {
     private final Integer credentialsTimeout;
 
     @Autowired
-    public SpotifySearcherConfig(@Value("${spotify.client-id}") String clientId, 
-                                     @Value("${spotify.client-secret}") String clientSecret,
-                                     @Value("${spotify.credentials-timeout}") Integer credentialsTimeout) {
+    public SpotifySearcherConfig(
+        @Value("${spotify.client-id}") String clientId, 
+        @Value("${spotify.client-secret}") String clientSecret,
+        @Value("${spotify.credentials-timeout}") Integer credentialsTimeout
+    ) {
         this.clientId = clientId;
         this.clientSecret = clientSecret;
         this.credentialsTimeout = credentialsTimeout;

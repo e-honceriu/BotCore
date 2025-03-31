@@ -17,7 +17,7 @@ import jakarta.persistence.*;
     uniqueConstraints = {
         @UniqueConstraint(columnNames = {"title", "botId", "guildDiscordId"})
     }
-    )
+)
 public class Playlist {
     
     @Id

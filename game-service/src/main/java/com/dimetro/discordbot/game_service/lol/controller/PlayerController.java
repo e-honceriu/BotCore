@@ -29,9 +29,11 @@ public class PlayerController {
     }
 
     @GetMapping
-    public ResponseEntity<PlayerResponseDTO> getPlayer(@RequestParam(name = "playerId", required = false) UUID playerId,
-                                                       @RequestParam(name = "discordPlayerId", required = false) String discordPlayerId,
-                                                       @RequestParam(name = "botId", required = true) UUID botId) {
+    public ResponseEntity<PlayerResponseDTO> getPlayer(
+        @RequestParam(name = "playerId", required = false) UUID playerId,
+        @RequestParam(name = "discordPlayerId", required = false) String discordPlayerId,
+        @RequestParam(name = "botId", required = true) UUID botId
+    ) {
         PlayerResponseDTO dto = null;
         if (playerId != null) {
             dto = playerService.getPlayer(playerId, botId);
@@ -52,7 +54,10 @@ public class PlayerController {
     }
 
     @DeleteMapping
-    public ResponseEntity<Void> deletePlayer(@RequestParam(name = "playerId", required = true) UUID playerId, @RequestParam(name = "botId") UUID botId) {
+    public ResponseEntity<Void> deletePlayer(
+        @RequestParam(name = "playerId", required = true) UUID playerId, 
+        @RequestParam(name = "botId") UUID botId
+    ) {
         playerService.deletePlayer(playerId, botId);
         return ResponseEntity.noContent().build();
     }

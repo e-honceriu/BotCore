@@ -33,9 +33,11 @@ public class PlayerStatsController {
     }
 
     @GetMapping
-    public ResponseEntity<PlayerStatsResponseDTO> getStats(@RequestParam(name="playerId", required=true) UUID playerId,
-                                                           @RequestParam(name="matchId", required=true) UUID matchId,
-                                                           @RequestParam(name="botId", required=true) UUID botId) {
+    public ResponseEntity<PlayerStatsResponseDTO> getStats(
+        @RequestParam(name = "playerId", required = true) UUID playerId,
+        @RequestParam(name = "matchId", required = true) UUID matchId,
+        @RequestParam(name = "botId", required = true) UUID botId
+    ) {
         return ResponseEntity.ok(playerManagementService.getPlayerStats(matchId, playerId, botId));
     }
 

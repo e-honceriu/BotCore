@@ -29,8 +29,10 @@ public class SeriesController {
     }
 
     @GetMapping
-    public ResponseEntity<SeriesResponseDTO> getSeries(@RequestParam(name = "seriesId", required = true) UUID seriesId,
-                                                       @RequestParam(name = "botId", required = true) UUID botId) {
+    public ResponseEntity<SeriesResponseDTO> getSeries(
+        @RequestParam(name = "seriesId", required = true) UUID seriesId,
+        @RequestParam(name = "botId", required = true) UUID botId
+    ) {
         return ResponseEntity.ok(seriesService.getSeries(seriesId, botId));
     }
 

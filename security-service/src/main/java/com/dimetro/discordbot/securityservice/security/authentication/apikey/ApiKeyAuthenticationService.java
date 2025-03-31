@@ -42,5 +42,4 @@ public class ApiKeyAuthenticationService {
         return new ApiKeyAuthentication(apiKey,  AuthorityUtils.NO_AUTHORITIES);
     }
 
-
 }

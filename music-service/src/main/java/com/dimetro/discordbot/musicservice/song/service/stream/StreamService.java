@@ -40,5 +40,4 @@ public class StreamService {
         return repository.countBySongAndBotIdAndGuildDiscordId(song, botId, guildDiscordId);
     } 
 
-
 }

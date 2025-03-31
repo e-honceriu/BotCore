@@ -11,6 +11,7 @@ public class UnexpectedRestClientException extends RestServiceClientException{
             "An unexpected error occurred while making the request"
         );
     }
+    
     public UnexpectedRestClientException(Throwable cause) {
         super(
             HttpStatus.INTERNAL_SERVER_ERROR,
@@ -19,4 +20,5 @@ public class UnexpectedRestClientException extends RestServiceClientException{
             cause
         );
     }
+
 }

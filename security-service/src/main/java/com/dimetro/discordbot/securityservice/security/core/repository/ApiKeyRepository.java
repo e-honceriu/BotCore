@@ -12,4 +12,5 @@ public interface ApiKeyRepository extends JpaRepository<ApiKey, UUID> {
     
     Optional<ApiKey> findByBot(Bot bot);
     Optional<ApiKey> findByKey(String key);
+    
 }
