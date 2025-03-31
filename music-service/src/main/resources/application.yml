@@ -20,20 +20,19 @@ spring:
 youtube:
   save-path: ${YOUTUBE_SAVE_PATH}
   api-key: ${YOUTUBE_API_KEY}
-  max_playlist_search: 50
+  max_playlist_search: ${YOUTUBE_MAX_PLAYLIST_SEARCH}
 
 spotify:
   client-id: ${SPOTIFY_CLIENT_ID}
   client-secret: ${SPOTIFY_CLIENT_SECRET}
   save-path: ${SPOTIFY_SAVE_PATH}
   temp-save-path: ${SPOTIFY_TEMP_SAVE_PATH}
-  credentials-timeout: 20
+  credentials-timeout: ${SPOTIFY_CREDENTIALS_TIMEOUT}
 
 song:
-  max-download-threads: 10
-  max-download-time-seconds: 600
-  default-platform: YOUTUBE
+  max-download-threads: ${SONG_MAX_DOWNLOAD_THREADS}
+  max-download-time-seconds: ${SONG_MAX_DOWNLOAD_TIME_SECONDS}
+  default-platform: ${SONG_DEFAULT_PLATFORM}
 
 server:
-  port: 8081
-  
+  port: 8081  

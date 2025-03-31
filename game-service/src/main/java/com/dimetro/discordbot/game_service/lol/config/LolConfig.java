@@ -17,7 +17,6 @@ public class LolConfig {
 
     private int maxEloGain;
     private int maxBans;
-    private int maxPlayers;
     private int championPoolSize;
     private int eloGain;
     private int eloDifficultyFactor;
