@@ -16,16 +16,14 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
 lol:
-  maxBans: 5
-  maxPlayers: 10
-  championPoolSize: 15
-  eloGain: 20
-  eloDifficultyFactor: 20
-  eloPerformanceFactor: 20
-  maxEloGain: 50
-  eloDifficultyKFactor: 200
-  startingElo: 400
+  maxBans: ${LOL_SERVICE_MAX_BANS}
+  championPoolSize: ${LOL_SERVICE_CHAMP_POOL_SIZE}
+  eloGain: ${LOL_SERVICE_ELO_GAIN}
+  eloDifficultyFactor: ${LOL_SERVICE_ELO_DIFFICULTY_FACTOR}
+  eloPerformanceFactor: ${LOL_SERVICE_ELO_PERFORMANCE_FACTOR}
+  maxEloGain: ${LOL_SERVICE_MAX_ELO_GAIN}
+  eloDifficultyKFactor: ${LOL_SERVICE_ELO_DIFFICULTY_FACTOR}
+  startingElo: ${LOL_SERVICE_ELO_GAIN}
 
 server:
   port: 8082
-

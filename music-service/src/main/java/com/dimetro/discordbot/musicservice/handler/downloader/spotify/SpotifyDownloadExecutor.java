@@ -29,7 +29,6 @@ public class SpotifyDownloadExecutor extends DownloadExecutor {
                         "spotdl", queryString,
                         "--output", tempDirPath
                     );
-
     }
 
     public void execute(String songId, String tempDirPath) {

@@ -13,4 +13,5 @@ public class SpotifySearcherException extends MusicServiceException {
     public SpotifySearcherException(HttpStatus status, String devMessage, String userMessage, Throwable cause) {
         super(status, userMessage, devMessage, cause);
     }
+    
 }

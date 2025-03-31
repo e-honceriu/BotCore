@@ -30,8 +30,10 @@ public class TeamController {
     }
 
     @GetMapping("/champion-pool")
-    public ResponseEntity<TeamChampionPoolResponseDTO> getChampionPool(@RequestParam(name = "teamId", required = true) UUID teamId,
-                                                                       @RequestParam(name = "botId", required = true)UUID botId) {
+    public ResponseEntity<TeamChampionPoolResponseDTO> getChampionPool(
+        @RequestParam(name = "teamId", required = true) UUID teamId,
+        @RequestParam(name = "botId", required = true)UUID botId
+    ) {
         return ResponseEntity.ok(teamManagementService.getTeamChampionPool(teamId, botId));
     }
 

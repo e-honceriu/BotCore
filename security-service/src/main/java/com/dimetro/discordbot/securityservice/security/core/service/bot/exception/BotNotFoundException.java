@@ -31,4 +31,3 @@ public class BotNotFoundException extends BotServiceException {
     }
 
 }
-    

@@ -37,7 +37,6 @@ public class ChampionStartupService implements CommandLineRunner {
         this.restTemplate = restTemplate;   
     }
 
-
     public void fetchAndUpdateChampions() {
         try {
             // Fetch the latest version

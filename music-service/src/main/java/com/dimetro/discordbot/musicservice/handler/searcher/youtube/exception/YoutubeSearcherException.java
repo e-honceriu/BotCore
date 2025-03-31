@@ -1,6 +1,5 @@
 package com.dimetro.discordbot.musicservice.handler.searcher.youtube.exception;
 
-
 import org.springframework.http.HttpStatus;
 
 import com.dimetro.discordbot.musicservice.core.exception.MusicServiceException;

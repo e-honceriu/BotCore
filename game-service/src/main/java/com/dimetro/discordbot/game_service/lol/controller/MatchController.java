@@ -23,9 +23,11 @@ public class MatchController {
     private final MatchLiveClientService matchLiveClientService;
 
     @Autowired
-    public MatchController(MatchManagementService matchService, MatchBanningService banningService,
-                           MatchRosterService rosterService, ResultService resultService, 
-                           MatchLiveClientService matchLiveClientService) {
+    public MatchController(
+        MatchManagementService matchService, MatchBanningService banningService,
+        MatchRosterService rosterService, ResultService resultService, 
+        MatchLiveClientService matchLiveClientService
+    ) {
         this.matchService = matchService;
         this.banningService = banningService;
         this.rosterService = rosterService;
@@ -34,8 +36,10 @@ public class MatchController {
     }
 
     @GetMapping
-    public ResponseEntity<MatchResponseDTO> getMatch(@RequestParam(name = "matchId", required = true) UUID matchId,
-                                                     @RequestParam(name = "botId", required = true) UUID botId) {
+    public ResponseEntity<MatchResponseDTO> getMatch(
+        @RequestParam(name = "matchId", required = true) UUID matchId, 
+        @RequestParam(name = "botId", required = true) UUID botId
+    ) {
         return ResponseEntity.ok(matchService.getMatch(matchId, botId));
     }
 

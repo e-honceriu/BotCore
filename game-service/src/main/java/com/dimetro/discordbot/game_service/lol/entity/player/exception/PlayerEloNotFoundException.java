@@ -7,7 +7,7 @@ import com.dimetro.discordbot.game_service.lol.entity.series.GameType;
 
 public class PlayerEloNotFoundException extends PlayerException {
     
-        public PlayerEloNotFoundException(GameType gameType, Player player) {
+    public PlayerEloNotFoundException(GameType gameType, Player player) {
         super(
             HttpStatus.NOT_FOUND,
             String.format("%s Elo not found for player <@%s>", gameType.getLabel(), player.getDiscordId()),

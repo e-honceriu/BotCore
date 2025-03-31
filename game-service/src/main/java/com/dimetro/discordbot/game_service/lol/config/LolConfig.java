@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 import lombok.Getter;
 import lombok.Setter;
 
-
 @Component
 @ConfigurationProperties(prefix = "lol")
 @Getter
@@ -17,7 +16,6 @@ public class LolConfig {
 
     private int maxEloGain;
     private int maxBans;
-    private int maxPlayers;
     private int championPoolSize;
     private int eloGain;
     private int eloDifficultyFactor;

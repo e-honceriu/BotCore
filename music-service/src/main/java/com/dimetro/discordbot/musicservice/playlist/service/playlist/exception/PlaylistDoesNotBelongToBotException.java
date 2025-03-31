@@ -13,4 +13,5 @@ public class PlaylistDoesNotBelongToBotException extends PlaylistServiceExceptio
             String.format("Playlist does not belong to the bot.", playlist.getId())
         );
     }
+    
 }
